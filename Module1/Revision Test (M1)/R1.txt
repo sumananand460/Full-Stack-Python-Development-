@@ -1,0 +1,208 @@
+Python Revision Test
+--------------------
+
+Instructions
+- Duration: 60–75 minutes
+- Attempt all questions
+- Focus on logic + clarity + correctness
+- Coding questions should be written with proper syntax
+
+---------------------------------------------------------
+MCQ (MULTIPLE CHOICE QUESTIONS)
+---------------------------------------------------------
+
+1. What is python?
+Solution: b. Interpreted Language
+
+2. Which of the following is a valid variable name?
+Solution: b. name_1
+
+3. Output for the given code will be: 50
+
+4. Which data type is immutable?
+Solution: c. Tuple
+
+5. Output for the given program will be: int
+
+6. What does input() return?
+Solution: c. String
+
+7. Which operator is used for exponentiation?
+Solution: a. ^
+
+8. Output for the given program will be: 3
+
+9. Which keyword is used for conditional branching?
+Solution: c. if
+
+10. Which loop is entry-controlled?
+Solution: d. Both a & b (for and while)
+
+-----------------------------------------------------
+Section B: SHORT ANSWER TYPE QUESTIONS:
+-----------------------------------------------------
+
+11. Difference between list and tuple
+
+(List): 
+
+- List is mutable (Means elements in list can be changed)
+- Consumes more memory
+- Slower iteration speed due to dynamic size
+- Uses [] brackets
+
+(Tuple):
+
+- Tuple is immutable (Means elements in tuple cannot be changed)
+- Consumes less memory
+- Higher iteration speed due to fixed size
+- Uses () brackets
+
+12. Difference between == and is
+
+=> == stands for equality operator
+- Used to compare values
+- Ex: [1,2] == [1,2]
+
+'is' identity operator
+- Used to compare object identity
+
+13. Explain typecasting with example
+
+=> Typecasting refers to converting one datatype to another datatype to ensure compatibility
+for specific operations.
+
+14. What are python datatypes? List at least 5
+
+=> Python data types refers to the categories in which different types of data values are stored.
+In simple terms it is used to categortize data values.
+
+5 python datatypes are:
+* int
+* float
+* dict
+* list
+* str
+
+15. Explain break and continue with an example
+
+=> Both break and continue are loop control statements 
+
+- break is used to terminate the current loop immediately and moves to the next statement after the loop.
+Ex: 
+for number in range(1, 6):
+    if number == 3:
+        print(f"Found {number}, breaking loop")
+        break
+    print(f"Processing number: {number}")
+# Output: 1, 2, and "Found 3" message
+
+- continue is used to break the current iteration and continue the next iteration
+Ex:
+for number in range(1, 6):
+    if number == 3:
+        print(f"Skipping {number}")
+        continue
+    print(f"Processing number: {number}")
+# Output: 1, 2, "Skipping 3", 4, 5
+
+
+16. What is indentation in python? Why is it important?
+
+=> Indentation: Indentation refers to the whitespace (spaces or tabs) in the beginning of the line of code
+- It is used to define the block of code very clear.
+- Used to define the block of code belongs to which loop or function
+- Makes the code readable
+- Improves the structure of the code
+
+17. What is negative indexing? Give an example
+
+=> Negative indexing refers to accessing elements in python 
+by counting elements from backwards in the end.
+
+-----------------------------------------------------------------
+SECTION - c
+-----------------------------------------------------------------
+
+18. Output: Pyt
+
+19. Output: A
+
+20. 1 2 3 4 
+
+21. olleh
+
+-----------------------------------------------------------------
+SECTION - D
+-----------------------------------------------------------------
+
+22. # PROGRAM TO CHECK IF A NUMBER IS EVEN OR ODD
+num = int(input("Enter the number: "))
+
+if num % 2 == 0:
+    print(f"{num} is a even number")
+
+else:
+    print(f"{num} is a odd number")
+
+23. # Taking three inputs
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+c = float(input("Enter third number: "))
+
+if (a >= b) and (a >= c):
+    largest = a
+elif (b >= a) and (b >= c):
+    largest = b
+else:
+    largest = c
+
+print(f"The largest number is: {largest}")
+
+24. s = "placement"
+reversed_s = s[::-1]
+print(reversed_s) # Output: tnemecalp
+
+25. text = "python"
+vowels = "aeiouAEIOU"
+count = 0
+
+for char in text:
+    if char in vowels:
+        count += 1
+
+print(count)  # Output: 1
+
+26. n = 5
+total = 0
+
+for i in range(1, n + 1):
+    total += i
+
+print(total)  # Output: 15
+
+27. rows = 4
+for i in range(1, rows + 1):
+    print("*" * i)
+
+28. s = "madam"
+if s == s[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
+29. n = 5
+fact = 1
+for i in range(1, n + 1):
+    fact *= i
+print(fact) # Output: 120
+
+30. nums = [1, 2, 2, 3, 4, 4]
+unique_nums = list(set(nums))
+print(unique_nums) # Output: [1, 2, 3, 4]
+
+31. Output: [1, 2, 3, 4]
+
+32. Output: 1020
+
+33. SyntaxError: invalid syntax
