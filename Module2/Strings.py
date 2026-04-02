@@ -4,3 +4,4 @@
 
 # Using a variable to store a string
 name = "Suman"
+print(name) # Output: Suman
