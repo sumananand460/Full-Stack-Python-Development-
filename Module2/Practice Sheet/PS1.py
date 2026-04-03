@@ -18,4 +18,4 @@ s1 = '''Name:
 Age:
 Goal: '''
 
-print(s1)a
+print(s1)
