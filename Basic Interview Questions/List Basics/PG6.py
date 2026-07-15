@@ -16,4 +16,4 @@ def second_largest(arr):
     return second if second!= float('-inf') else None
 
 nums = [12, 35, 1, 10, 34, 1]
-print(second_largest(nums)) # 
+print(second_largest(nums)) # 34
