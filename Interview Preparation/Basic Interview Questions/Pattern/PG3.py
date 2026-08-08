@@ -1,3 +1,5 @@
+# WAP to print a number pyramid
+
 def number_pyramid(n):
     for i in range(1, n + 1):
         spaces = " " * (n - i)

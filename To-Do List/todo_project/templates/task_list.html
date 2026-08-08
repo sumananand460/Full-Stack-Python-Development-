@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- Action Bar -->
+    <div class="actions-bar">
+        <a href="{% url 'task_create' %}" class="btn btn-primary">+ Add New Task</a>
+
+        <div class="filter-group">
+            <span class="filter-label">Filter:</span>
+            <a href="?filter=all&sort={{ current_sort }}"
+               class="btn btn-sm {% if current_filter == 'all' %}btn-active{% endif %}">All</a>
+            <a href="?filter=pending&sort={{ current_sort }}"
+               class="btn btn-sm {% if current_filter == 'pending' %}btn-active{% endif %}">Pending</a>
+            <a href="?filter=completed&sort={{ current_sort }}"
+               class="btn btn-sm {% if current_filter == 'completed' %}btn-active{% endif %}">Completed</a>
+        </div>
+
+        <div class="filter-group">
+            <span class="filter-label">Sort:</span>
+            <a href="?filter={{ current_filter }}&sort=created"
+               class="btn btn-sm {% if current_sort == 'created' %}btn-active{% endif %}">Created</a>
+            <a href="?filter={{ current_filter }}&sort=priority"
+               class="btn btn-sm {% if current_sort == 'priority' %}btn-active{% endif %}">Priority</a>
+            <a href="?filter={{ current_filter }}&sort=deadline"
+               class="btn btn-sm {% if current_sort == 'deadline' %}btn-active{% endif %}">Deadline</a>
+        </div>
+    </div>
+
+    <!-- Task List -->
+    {% if tasks %}
+        <div class="task-list">
+            {% for task in tasks %}
+                <div class="task-card {% if task.completed %}task-completed{% endif %}">
+                    <div class="task-header">
+                        <div class="task-title-row">
+                            <form action="{% url 'task_toggle' task.pk %}" method="post" class="toggle-form">
+                                {% csrf_token %}
+                                <button type="submit"
+                                        class="checkbox {% if task.completed %}checked{% endif %}"
+                                        aria-label="Toggle complete"></button>
+                            </form>
+                            <h3>{{ task.title }}</h3>
+                        </div>
+                        <div class="task-actions">
+                            <a href="{% url 'task_update' task.pk %}" class="btn-icon" title="Edit">✏️</a>
+                            <a href="{% url 'task_delete' task.pk %}" class="btn-icon" title="Delete">🗑️</a>
+                        </div>
+                    </div>
+
+                    {% if task.description %}
+                        <p class="task-description">{{ task.description }}</p>
+                    {% endif %}
+
+                    <div class="task-meta">
+                        <span class="priority priority-{{ task.priority }}">
+                            {{ task.get_priority_display }}
+                        </span>
+                        <span class="deadline">📅 {{ task.deadline|date:"M d, Y · h:i A" }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <div class="empty-icon">📝</div>
+            <p>No tasks found. Click "Add New Task" to get started!</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
